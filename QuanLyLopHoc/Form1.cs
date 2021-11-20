@@ -132,6 +132,7 @@ namespace QuanLyLopHoc
         {
             if (e.ColumnIndex == 4)
             {
+                this.Hide();
                 Form2 f2 = new Form2();
                 f2.Show();
             }
