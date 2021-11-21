@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DAL_ThanhVien.cs" />
+    <Compile Include="DAL_HOCVIEN.cs" />
     <Compile Include="DBconnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

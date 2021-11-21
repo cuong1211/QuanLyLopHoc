@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyLopHoc
 {
-    public partial class Form2 : Form
+    public partial class GiaoVien : Form
     {
-        public Form2()
+        public GiaoVien()
         {
             InitializeComponent();
         }
@@ -20,14 +20,13 @@ namespace QuanLyLopHoc
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 f1 = new Form1();
-            f1.Show();
+            Main main = new Main();
+            main.Show();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        
 
-        }
+        
     }
 }

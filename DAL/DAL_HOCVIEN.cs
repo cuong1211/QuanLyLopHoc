@@ -8,18 +8,18 @@ using DTO;
 
 namespace DAL
 {
-    public class DAL_ThanhVien :DBconnect
+    public class DAL_HOCVIEN :DBconnect
     {
         // <summary>
         /// Get toàn bộ thành viên
         /// </summary>
         /// <returns></returns>
-        public DataTable getThanhVien()
+        public DataTable getHocVien()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM THANHVIEN", _conn);
-            DataTable dtThanhvien = new DataTable();
-            da.Fill(dtThanhvien);
-            return dtThanhvien;
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM HOCVIEN", _conn);
+            DataTable dtHocvien = new DataTable();
+            da.Fill(dtHocvien);
+            return dtHocvien;
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace DAL
         /// </summary>
         /// <param name="tv"></param>
         /// <returns></returns>
-        public bool themThanhVien(DTO_ThanhVien tv)
+        public bool themHocVien(DTO_HOCVIEN tv)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace DAL
                 _conn.Open();
 
                 // Query string - vì mình để TV_ID là identity (giá trị tự tăng dần) nên ko cần fải insert ID
-                string SQL = string.Format("INSERT INTO THANHVIEN(TV_NAME, TV_PHONE, TV_EMAIL) VALUES ('{0}', '{1}', '{2}')", tv.THANHVIEN_NAME, tv.THANHVIEN_PHONE, tv.THANHVIEN_EMAIL);
+                string SQL = string.Format("INSERT INTO HOCVIEN(HV_NAME, HV_DOB, HV_ADD) VALUES ('{0}', '{1}', '{2}')", tv.HV_NAME, tv.HV_DOB, tv.HV_ADD);
 
                 // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
@@ -63,7 +63,7 @@ namespace DAL
         /// </summary>
         /// <param name="tv"></param>
         /// <returns></returns>
-        public bool suaThanhVien(DTO_ThanhVien tv)
+        public bool suaHocVien(DTO_HOCVIEN hv)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace DAL
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("UPDATE THANHVIEN SET TV_NAME = '{0}', TV_PHONE = '{1}', TV_EMAIL = '{2}' WHERE TV_ID = {3}", tv.THANHVIEN_NAME, tv.THANHVIEN_PHONE, tv.THANHVIEN_EMAIL, tv.THANHVIEN_ID);
+                string SQL = string.Format("UPDATE HOCVIEN SET HV_NAME = '{0}', HV_DOB = '{1}', HV_ADD = '{2}' WHERE HOCVIEN_ID = {3}", hv.HV_NAME, hv.HV_DOB, hv.HV_ADD, hv.HV_ID);
 
                 // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
@@ -99,7 +99,7 @@ namespace DAL
         /// </summary>
         /// <param name="tv"></param>
         /// <returns></returns>
-        public bool xoaThanhVien(int TV_ID)
+        public bool xoaHocVien(int HV_ID)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace DAL
                 _conn.Open();
 
                 // Query string - vì xóa chỉ cần ID nên chúng ta ko cần 1 DTO, ID là đủ
-                string SQL = string.Format("DELETE FROM THANHVIEN WHERE TV_ID = {0})", TV_ID);
+                string SQL = string.Format("DELETE FROM HOCVIEN WHERE HV_ID = {0}", HV_ID);
 
                 // Command (mặc định command type = text nên chúng ta khỏi fải làm gì nhiều).
                 SqlCommand cmd = new SqlCommand(SQL, _conn);

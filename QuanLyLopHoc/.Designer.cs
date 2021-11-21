@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyLopHoc
 {
-    partial class Form1
+    partial class HocVien
     {
         /// <summary>
         /// Required designer variable.
@@ -33,17 +33,17 @@ namespace QuanLyLopHoc
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAdd = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.dgvTV = new System.Windows.Forms.DataGridView();
-            this.TV_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TV_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TV_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TV_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HV_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HV_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HV_PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HV_EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dpDob = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,18 +61,18 @@ namespace QuanLyLopHoc
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(81, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "So dien thoai";
+            this.label2.Text = "ngay sinh";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(81, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Email";
+            this.label3.Text = "dia chi";
             // 
             // txtName
             // 
@@ -81,19 +81,12 @@ namespace QuanLyLopHoc
             this.txtName.Size = new System.Drawing.Size(207, 20);
             this.txtName.TabIndex = 3;
             // 
-            // txtSDT
+            // txtAdd
             // 
-            this.txtSDT.Location = new System.Drawing.Point(204, 94);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(207, 20);
-            this.txtSDT.TabIndex = 4;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(204, 132);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(207, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtAdd.Location = new System.Drawing.Point(204, 132);
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.Size = new System.Drawing.Size(207, 20);
+            this.txtAdd.TabIndex = 5;
             // 
             // btnAdd
             // 
@@ -131,64 +124,73 @@ namespace QuanLyLopHoc
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "thoat";
+            this.btnExit.Text = "quay lai";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // dgvTV
             // 
             this.dgvTV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TV_ID,
-            this.TV_NAME,
-            this.TV_PHONE,
-            this.TV_EMAIL});
+            this.HV_ID,
+            this.HV_NAME,
+            this.HV_PHONE,
+            this.HV_EMAIL});
             this.dgvTV.Location = new System.Drawing.Point(84, 244);
             this.dgvTV.Name = "dgvTV";
             this.dgvTV.Size = new System.Drawing.Size(645, 182);
             this.dgvTV.TabIndex = 10;
+            this.dgvTV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTV_Click);
             this.dgvTV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTV_CellContentClick);
             // 
-            // TV_ID
+            // HV_ID
             // 
-            this.TV_ID.DataPropertyName = "TV_ID";
-            this.TV_ID.HeaderText = "ID";
-            this.TV_ID.Name = "TV_ID";
+            this.HV_ID.DataPropertyName = "HV_ID";
+            this.HV_ID.HeaderText = "ID";
+            this.HV_ID.Name = "HV_ID";
             // 
-            // TV_NAME
+            // HV_NAME
             // 
-            this.TV_NAME.DataPropertyName = "TV_NAME";
-            this.TV_NAME.HeaderText = "NAME";
-            this.TV_NAME.Name = "TV_NAME";
+            this.HV_NAME.DataPropertyName = "HV_NAME";
+            this.HV_NAME.HeaderText = "NAME";
+            this.HV_NAME.Name = "HV_NAME";
             // 
-            // TV_PHONE
+            // HV_PHONE
             // 
-            this.TV_PHONE.DataPropertyName = "TV_PHONE";
-            this.TV_PHONE.HeaderText = "PHONE";
-            this.TV_PHONE.Name = "TV_PHONE";
+            this.HV_PHONE.DataPropertyName = "HV_DOB";
+            this.HV_PHONE.HeaderText = "DOB";
+            this.HV_PHONE.Name = "HV_PHONE";
             // 
-            // TV_EMAIL
+            // HV_EMAIL
             // 
-            this.TV_EMAIL.DataPropertyName = "TV_EMAIL";
-            this.TV_EMAIL.HeaderText = "EMAIL";
-            this.TV_EMAIL.Name = "TV_EMAIL";
+            this.HV_EMAIL.DataPropertyName = "HV_ADD";
+            this.HV_EMAIL.HeaderText = "ADD";
+            this.HV_EMAIL.Name = "HV_EMAIL";
             // 
-            // Form1
+            // dpDob
+            // 
+            this.dpDob.Location = new System.Drawing.Point(204, 94);
+            this.dpDob.Name = "dpDob";
+            this.dpDob.Size = new System.Drawing.Size(200, 20);
+            this.dpDob.TabIndex = 11;
+            // 
+            // HocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dpDob);
             this.Controls.Add(this.dgvTV);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtAdd);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "HocVien";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTV)).EndInit();
@@ -203,17 +205,17 @@ namespace QuanLyLopHoc
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAdd;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridView dgvTV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TV_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TV_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TV_PHONE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TV_EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HV_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HV_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HV_PHONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HV_EMAIL;
+        private System.Windows.Forms.DateTimePicker dpDob;
     }
 }
 

@@ -12,38 +12,40 @@ using BUS;
 
 namespace QuanLyLopHoc
 {
-    public partial class Form1 : Form
+    public partial class HocVien : Form
     {
-        BUS_ThanhVien busTV = new BUS_ThanhVien();
+        BUS_HOCVIEN busTV = new BUS_HOCVIEN();
 
         public object DataGridViewButtonCollum { get; private set; }
 
-        public Form1()
+        public HocVien()
         {
             InitializeComponent();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            Main main = new Main();
+            main.Show();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgvTV.DataSource = busTV.getThanhVien(); // get thanh vien
+            dgvTV.DataSource = busTV.getHocVien(); // get thanh vien
             addButton();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text != "" && txtName.Text != "" && txtSDT.Text != "")
+            if (txtAdd.Text != "" && txtName.Text != "" && dpDob.Text != "")
             {
                 // Tạo DTo
-                DTO_ThanhVien tv = new DTO_ThanhVien(0, txtName.Text, txtSDT.Text, txtEmail.Text); // Vì ID tự tăng nên để ID số gì cũng dc
+                DTO_HOCVIEN tv = new DTO_HOCVIEN(0, txtName.Text, dpDob.Text, txtAdd.Text); // Vì ID tự tăng nên để ID số gì cũng dc
 
                 // Them
-                if (busTV.themThanhVien(tv))
+                if (busTV.themHocVien(tv))
                 {
                     MessageBox.Show("Thêm thành công");
-                    dgvTV.DataSource = busTV.getThanhVien(); // refresh datagridview
+                    dgvTV.DataSource = busTV.getHocVien(); // refresh datagridview
                 }
                 else
                 {
@@ -60,20 +62,20 @@ namespace QuanLyLopHoc
         {
             if (dgvTV.SelectedRows.Count > 0)
             {
-                if (txtEmail.Text != "" && txtName.Text != "" && txtSDT.Text != "")
+                if (txtAdd.Text != "" && txtName.Text != "" && dpDob.Text != "")
                 {
                     // Lấy row hiện tại
                     DataGridViewRow row = dgvTV.SelectedRows[0];
                     int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
 
                     // Tạo DTo
-                    DTO_ThanhVien tv = new DTO_ThanhVien(ID, txtName.Text, txtSDT.Text, txtEmail.Text); // Vì ID tự tăng nên để ID số gì cũng dc
+                    DTO_HOCVIEN tv = new DTO_HOCVIEN(ID, txtName.Text, dpDob.Text, txtAdd.Text); // Vì ID tự tăng nên để ID số gì cũng dc
 
                     // Sửa
-                    if (busTV.suaThanhVien(tv))
+                    if (busTV.suaHocVien(tv))
                     {
                         MessageBox.Show("Sửa thành công");
-                        dgvTV.DataSource = busTV.getThanhVien(); // refresh datagridview
+                        dgvTV.DataSource = busTV.getHocVien(); // refresh datagridview
                     }
                     else
                     {
@@ -101,10 +103,10 @@ namespace QuanLyLopHoc
                 int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
 
                 // Xóa
-                if (busTV.xoaThanhVien(ID))
+                if (busTV.xoaHocVien(ID))
                 {
                     MessageBox.Show("Xóa thành công");
-                    dgvTV.DataSource = busTV.getThanhVien(); // refresh datagridview
+                    dgvTV.DataSource = busTV.getHocVien(); // refresh datagridview
                 }
                 else
                 {
@@ -133,9 +135,26 @@ namespace QuanLyLopHoc
             if (e.ColumnIndex == 4)
             {
                 this.Hide();
-                Form2 f2 = new Form2();
+                GiaoVien f2 = new GiaoVien();
                 f2.Show();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTV_Click(object sender, DataGridViewCellEventArgs e)
+        {
+           
+
+            DataGridViewRow row = dgvTV.SelectedCells[0].OwningRow;
+
+            // Chuyển giá trị lên form
+            txtName.Text = row.Cells[1].Value.ToString();
+            dpDob.Text = row.Cells[2].Value.ToString();
+            txtAdd.Text = row.Cells[3].Value.ToString();
         }
     }
 }
