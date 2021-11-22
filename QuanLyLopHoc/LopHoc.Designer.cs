@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyLopHoc
 {
-    partial class Form1
+    partial class LopHoc
     {
         /// <summary>
         /// Required designer variable.

@@ -10,36 +10,29 @@ using System.Windows.Forms;
 using DTO;
 using BUS;
 
+
 namespace QuanLyLopHoc
 {
-    public partial class GiaoVien : Form
+    public partial class MonHoc : Form
     {
-        BUS_GIANGVIEN busGV = new BUS_GIANGVIEN();
-        public GiaoVien()
+        BUS_MONHOC busMH = new BUS_MONHOC();
+        public MonHoc()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Main main = new Main();
-            main.Show();
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            if (txtAdd.Text != "" && txtName.Text != "" && dpDob.Text != "")
+            if ( txtName.Text != "" )
             {
                 // Tạo DTo
-                DTO_GIANGVIEN gv = new DTO_GIANGVIEN(0, txtName.Text, dpDob.Text, txtAdd.Text); // Vì ID tự tăng nên để ID số gì cũng dc
+                DTO_MONHOC mh = new DTO_MONHOC(0, txtName.Text); // Vì ID tự tăng nên để ID số gì cũng dc
 
                 // Them
-                if (busGV.themGiangVien(gv))
+                if (busMH.themMonHoc(mh))
                 {
                     MessageBox.Show("Thêm thành công");
-                    dgvGV.DataSource = busGV.getGiangVien(); // refresh datagridview
+                    dgvTV.DataSource = busMH.getMonHoc(); // refresh datagridview
                 }
                 else
                 {
@@ -52,24 +45,24 @@ namespace QuanLyLopHoc
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvGV.SelectedRows.Count > 0)
+            if (dgvTV.SelectedRows.Count > 0)
             {
-                if (txtAdd.Text != "" && txtName.Text != "" && dpDob.Text != "")
+                if (txtName.Text != "" )
                 {
                     // Lấy row hiện tại
-                    DataGridViewRow row = dgvGV.SelectedRows[0];
+                    DataGridViewRow row = dgvTV.SelectedRows[0];
                     int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
 
                     // Tạo DTo
-                    DTO_GIANGVIEN gv = new DTO_GIANGVIEN(ID, txtName.Text, dpDob.Text, txtAdd.Text); // Vì ID tự tăng nên để ID số gì cũng dc
+                    DTO_MONHOC tv = new DTO_MONHOC(ID, txtName.Text); // Vì ID tự tăng nên để ID số gì cũng dc
 
                     // Sửa
-                    if (busGV.suaGiangvien(gv))
+                    if (busMH.suaMonHoc(tv))
                     {
                         MessageBox.Show("Sửa thành công");
-                        dgvGV.DataSource = busGV.getGiangVien(); // refresh datagridview
+                        dgvTV.DataSource = busMH.getMonHoc(); // refresh datagridview
                     }
                     else
                     {
@@ -87,20 +80,20 @@ namespace QuanLyLopHoc
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvGV.SelectedRows.Count > 0)
+            if (dgvTV.SelectedRows.Count > 0)
             {
 
                 // Lấy row hiện tại
-                DataGridViewRow row = dgvGV.SelectedRows[0];
+                DataGridViewRow row = dgvTV.SelectedRows[0];
                 int ID = Convert.ToInt16(row.Cells[0].Value.ToString());
 
                 // Xóa
-                if (busGV.xoaGiangVien(ID))
+                if (busMH.xoaMonHoc(ID))
                 {
                     MessageBox.Show("Xóa thành công");
-                    dgvGV.DataSource = busGV.getGiangVien(); // refresh datagridview
+                    dgvTV.DataSource = busMH.getMonHoc(); // refresh datagridview
                 }
                 else
                 {
@@ -114,19 +107,19 @@ namespace QuanLyLopHoc
             }
         }
 
-        private void dgvGV_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvGV.SelectedCells[0].OwningRow;
-
-            // Chuyển giá trị lên form
-            txtName.Text = row.Cells[1].Value.ToString();
-            dpDob.Text = row.Cells[2].Value.ToString();
-            txtAdd.Text = row.Cells[3].Value.ToString();
+            this.Close();
+            Main main = new Main();
+            main.Show();
         }
 
-        private void GiaoVien_Load(object sender, EventArgs e)
+       
+
+        private void MonHoc_Load(object sender, EventArgs e)
         {
-            dgvGV.DataSource = busGV.getGiangVien(); // get thanh vien
+            dgvTV.DataSource = busMH.getMonHoc(); // get thanh vien
+            
         }
     }
 }

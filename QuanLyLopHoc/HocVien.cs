@@ -153,5 +153,35 @@ namespace QuanLyLopHoc
             dpDob.Text = row.Cells[2].Value.ToString();
             txtAdd.Text = row.Cells[3].Value.ToString();
         }
+
+        private void dpDob_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

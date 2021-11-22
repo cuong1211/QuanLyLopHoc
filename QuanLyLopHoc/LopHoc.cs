@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyLopHoc
 {
-    public partial class Form1 : Form
+    public partial class LopHoc : Form
     {
-        public Form1()
+        public LopHoc()
         {
             InitializeComponent();
-        }
+        }  
     }
 }

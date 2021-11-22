@@ -44,6 +44,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTO_GIANGVIEN.cs" />
     <Compile Include="DTO_HOCVIEN.cs" />
+    <Compile Include="DTO_LOPHOC.cs" />
+    <Compile Include="DTO_MONHOC.cs" />
+    <Compile Include="DTO_QLLH.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

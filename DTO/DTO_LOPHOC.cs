@@ -8,8 +8,8 @@ namespace DTO
     {
         private int _LH_ID;
         private string _LH_NAME;
-        private string _GV_ID;
-        private string _MH_ID;
+        private int _GV_ID;
+        private int _MH_ID;
 
         /* ======== GETTER/SETTER ======== */
         public int LH_ID
@@ -38,7 +38,7 @@ namespace DTO
             }
         }
 
-        public string GV_ID
+        public int GV_ID
         {
             get
             {
@@ -51,7 +51,7 @@ namespace DTO
             }
         }
 
-        public string MH_ID
+        public int MH_ID
         {
             get
             {
@@ -70,12 +70,12 @@ namespace DTO
 
         }
 
-        public DTO_LOPHOC(int id, string name, string dob, string add)
+        public DTO_LOPHOC(int id, string name, int gvid, int mhid)
         {
             this.LH_ID = id;
             this.LH_NAME = name;
-            this.GV_ID = dob;
-            this.MH_ID = add;
+            this.GV_ID = gvid;
+            this.MH_ID = mhid;
         }
     }
 }

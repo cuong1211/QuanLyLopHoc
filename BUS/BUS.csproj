@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="BUS_GIANGVIEN.cs" />
     <Compile Include="BUS_HOCVIEN.cs" />
+    <Compile Include="BUS_LOPHOC.cs" />
+    <Compile Include="BUS_MONHOC.cs" />
+    <Compile Include="BUS_QLLH.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

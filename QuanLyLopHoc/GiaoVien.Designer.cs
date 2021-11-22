@@ -193,6 +193,7 @@ namespace QuanLyLopHoc
             this.Controls.Add(this.btnBack);
             this.Name = "GiaoVien";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.GiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -44,6 +44,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAL_GIANGVIEN.cs" />
     <Compile Include="DAL_HOCVIEN.cs" />
+    <Compile Include="DAL_LOPHOC.cs" />
+    <Compile Include="DAL_MONHOC.cs" />
+    <Compile Include="DAL_QLLH.cs" />
     <Compile Include="DBconnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

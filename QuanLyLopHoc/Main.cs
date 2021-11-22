@@ -35,5 +35,12 @@ namespace QuanLyLopHoc
         {
 
         }
+
+        private void txtMon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MonHoc mh = new MonHoc();
+            mh.Show();
+        }
     }
 }
