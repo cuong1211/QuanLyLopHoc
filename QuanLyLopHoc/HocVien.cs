@@ -32,6 +32,7 @@ namespace QuanLyLopHoc
         {
             dgvTV.DataSource = busTV.getHocVien(); // get thanh vien
             addButton();
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -121,16 +122,14 @@ namespace QuanLyLopHoc
         }
         private void addButton()
         {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            DataGridViewCheckBoxColumn btn = new DataGridViewCheckBoxColumn();
             btn.HeaderText = "ACTION";
             btn.Name = "Action";
-            btn.Text = "Xem";
-            btn.UseColumnTextForButtonValue = true;
             dgvTV.Columns.Add(btn);
         }
       
 
-        private void dgvTV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dgvTV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4)
             {
@@ -138,7 +137,7 @@ namespace QuanLyLopHoc
                 GiaoVien f2 = new GiaoVien();
                 f2.Show();
             }
-        }
+        }*/
 
        
 
@@ -154,34 +153,6 @@ namespace QuanLyLopHoc
             txtAdd.Text = row.Cells[3].Value.ToString();
         }
 
-        private void dpDob_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAdd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

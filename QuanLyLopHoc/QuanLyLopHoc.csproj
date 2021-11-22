@@ -85,6 +85,9 @@
     <EmbeddedResource Include="GiaoVien.resx">
       <DependentUpon>GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LopHoc.resx">
+      <DependentUpon>LopHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

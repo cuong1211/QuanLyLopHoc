@@ -33,7 +33,9 @@ namespace QuanLyLopHoc
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            LopHoc lh = new LopHoc();
+            lh.Show();
         }
 
         private void txtMon_Click(object sender, EventArgs e)

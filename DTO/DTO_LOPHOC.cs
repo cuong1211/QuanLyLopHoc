@@ -70,12 +70,12 @@ namespace DTO
 
         }
 
-        public DTO_LOPHOC(int id, string name, int gvid, int mhid)
+        public DTO_LOPHOC(int id, string name, int gv_id, int mh_id)
         {
             this.LH_ID = id;
             this.LH_NAME = name;
-            this.GV_ID = gvid;
-            this.MH_ID = mhid;
+            this.GV_ID = gv_id;
+            this.MH_ID = mh_id;
         }
     }
 }

@@ -55,7 +55,6 @@ namespace QuanLyLopHoc
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ho ten ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -65,7 +64,6 @@ namespace QuanLyLopHoc
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "ngay sinh";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -75,7 +73,6 @@ namespace QuanLyLopHoc
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "dia chi";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtName
             // 
@@ -83,7 +80,6 @@ namespace QuanLyLopHoc
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(207, 20);
             this.txtName.TabIndex = 3;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtAdd
             // 
@@ -91,7 +87,6 @@ namespace QuanLyLopHoc
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(207, 20);
             this.txtAdd.TabIndex = 5;
-            this.txtAdd.TextChanged += new System.EventHandler(this.txtAdd_TextChanged);
             // 
             // btnAdd
             // 
@@ -146,7 +141,7 @@ namespace QuanLyLopHoc
             this.dgvTV.Size = new System.Drawing.Size(645, 182);
             this.dgvTV.TabIndex = 10;
             this.dgvTV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTV_Click);
-            this.dgvTV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTV_CellContentClick);
+            
             // 
             // HV_ID
             // 
@@ -174,11 +169,10 @@ namespace QuanLyLopHoc
             // 
             // dpDob
             // 
-            this.dpDob.Location = new System.Drawing.Point(204, 94);
+            this.dpDob.Location = new System.Drawing.Point(205, 94);
             this.dpDob.Name = "dpDob";
             this.dpDob.Size = new System.Drawing.Size(200, 20);
             this.dpDob.TabIndex = 11;
-            this.dpDob.ValueChanged += new System.EventHandler(this.dpDob_ValueChanged);
             // 
             // HocVien
             // 
